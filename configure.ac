@@ -33,7 +33,7 @@ AC_CONFIG_MACRO_DIR([m4])
 AC_CONFIG_HEADERS([config.h])
 m4_ifdef([AM_SILENT_RULES],[AM_SILENT_RULES([yes])])
 
-AC_PREREQ([2.69])
+AC_PREREQ([2.68])
 AC_PROG_CC
 AC_PROG_CXX
 LT_INIT
@@ -107,7 +107,7 @@ case $backend in
 linux)
 	AC_DEFINE(OS_LINUX, 1, [Linux backend])
 	AC_SUBST(OS_LINUX)
-	AC_SEARCH_LIBS([clock_gettime2], [rt], [], [], [-pthread])
+	AC_SEARCH_LIBS([clock_gettime], [rt], [], [], [-pthread])
 	AC_ARG_ENABLE([udev],
 		[AC_HELP_STRING([--enable-udev], [use udev for device enumeration and hotplug support (recommended) [default=yes]])],
 		[], [enable_udev=yes])
